@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<title>Temperature and Units of Length Converter</title>
+<style>
+    body {
+        background-image: url('https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg');
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+        .btn {
+        border: none;
+        background-color: inherit;
+        padding: 14px 28px;
+        font-size: 16px;
+        cursor: pointer;
+        display: inline-block;
+    }
+
+    .back {
+        color: black;
+        font-family: Tahoma;
+    }
+
+    .back:hover {
+        background: #2196F3;
+        color: white;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+    }
+    a:hover {
+        text-decoration: underline;
+        color: #000000;
+    }
+    </style>
+<body>
+    <h1 style="font-family: Tahoma; text-align: center;"><bold>Temperature Converter</bold></h1>
+
+    <div>
+        <h2 style="font-family: Tahoma;"><bold>Fahrenheit to Celsius Converter</bold></h2>
+        <p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
+
+        <p>
+            <label>Fahrenheit</label>
+            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+        </p>
+        <p>Celcius: <span id="outputCelcius"></span></p>
+
+        <script>
+            function temperatureConverter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
+            }
+        </script>
+    </div>
+
+    <br>
+    <button class="btn back"><bold><a href="https://emaestimada.w3spaces.com/emaestimada.html">Go Back to Menu</a></bold></button>
+
+    
+    <!-- <div>
+        <h3 style="font-family: Tahoma;"><bold>Celcius to Fahrenheit Converter</bold></h3>
+        <p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
+
+        <p>
+            <label>Celsius</label>
+            <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">            
+        </p>
+
+        <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
+
+        <script>
+            function temperatureConverter(valNum) {
+            valNum = parseFloat(valNum);
+            document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
+            }
+        </script>
+    </div> -->
+</body>
+</html>
