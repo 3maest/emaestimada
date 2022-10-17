@@ -36,49 +36,87 @@
         text-decoration: underline;
         color: #000000;
     }
-    </style>
+</style>
 <body>
-    <h1 style="font-family: Tahoma; text-align: center;"><bold>Temperature Converter</bold></h1>
+    <h1 style="font-family: Tahoma; text-align: center;"><bold>Measurement Converters</bold></h1>
 
-    <div>
+    <!-- FAHRENHEIT TO CELSIUS -->
+    <div style="float:left; width:50%;">
         <h2 style="font-family: Tahoma;"><bold>Fahrenheit to Celsius Converter</bold></h2>
         <p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
 
         <p>
             <label>Fahrenheit</label>
-            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">
+            <input id="inputFahrenheit" type="number" placeholder="Fahrenheit" oninput="fahrenheitConverter(this.value)" onchange="fahrenheitConverter(this.value)">
         </p>
         <p>Celcius: <span id="outputCelcius"></span></p>
 
         <script>
-            function temperatureConverter(valNum) {
+            function fahrenheitConverter(valNum) {
             valNum = parseFloat(valNum);
             document.getElementById("outputCelcius").innerHTML=(valNum-32)/1.8;
             }
         </script>
-    </div>
 
-    <br>
-    <button class="btn back"><bold><a href="https://3maest.github.io/emaestimada/">Go Back to Menu</a></bold></button>
-
-    
-    <!-- <div>
-        <h3 style="font-family: Tahoma;"><bold>Celcius to Fahrenheit Converter</bold></h3>
+        <!-- CELSIUS TO FAHRENHEIT -->
+        <h2 style="font-family: Tahoma;"><bold>Celsius to Fahrenheit Converter</bold></h2>
         <p>Type a value in the Celsius field to convert the value to Fahrenheit:</p>
 
         <p>
             <label>Celsius</label>
-            <input id="inputCelsius" type="number" placeholder="Celsius" oninput="temperatureConverter(this.value)" onchange="temperatureConverter(this.value)">            
+            <input id="inputCelsius" type="number" placeholder="Celsius" oninput="celsiusConverter(this.value)" onchange="celsiusConverter(this.value)">            
         </p>
 
         <p>Fahrenheit: <span id="outputFahrenheit"></span></p>
 
         <script>
-            function temperatureConverter(valNum) {
+            function celsiusConverter(valNum) {
             valNum = parseFloat(valNum);
             document.getElementById("outputFahrenheit").innerHTML=(valNum*1.8)+32;
             }
         </script>
-    </div> -->
+    </div>
+    
+    
+
+    <!-- FEET TO METERS     -->
+    <div style="float:left; width:50%;">
+        <h2 style="font-family: Tahoma;"><bold>Feet to Meters</bold></h2>
+        <p>Type a value in the Feet field to convert the value to Meters:</p>
+
+        <p>
+            <label>Feet</label>
+            <input id="inputFeet" type="number" placeholder="Feet" oninput="FeetConverter(this.value)" onchange="FeetConverter(this.value)">
+        </p>
+
+        <p>Meters: <span id="outputMeters"></span></p>
+
+        <script>
+            function FeetConverter(valNum) {
+            document.getElementById("outputMeters").innerHTML=valNum/3.2808;
+            }
+        </script>
+
+        <!-- METERS TO FEET -->
+        <h2 style="font-family: Tahoma;"><bold>Meters to Feet</bold></h2>
+
+        <p>Type a value in the Meters field to convert the value to Feet:</p>
+
+        <p>
+        <label>Meters</label>
+        <input id="inputMeters" type="number" placeholder="Meters" oninput="MeterConverter(this.value)" onchange="MeterConverter(this.value)">
+        </p>
+        <p>Feet: <span id="outputFeet"></span></p>
+
+        <script>
+        function MeterConverter(valNum) {
+        document.getElementById("outputFeet").innerHTML=valNum*3.2808;
+        }
+        </script>
+    </div>
+
+    <br>
+    <button class="btn back" style="text-align: center;"><bold><a href="https://emaestimada.w3spaces.com/emaestimada.html">Go Back to Menu</a></bold></button>
+
 </body>
 </html>
