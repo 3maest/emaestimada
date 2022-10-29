@@ -4,38 +4,95 @@
     <title>Income Tax Calculator</title>
 </head>
 <style>
-    .btn {
-        border: none;
-        background-color: inherit;
-        padding: 14px 28px;
-        font-size: 16px;
-        cursor: pointer;
-        display: inline-block;
+    body{
+        background-image: url("https://wallpaperaccess.com/full/701802.jpg");
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 
-    .back {
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: Tahoma
+    }
+
+    .navbar a:hover {
+        background: #f1f1f1;
         color: black;
-        font-family: Tahoma;
     }
 
-    .back:hover {
-        background: #2196F3;
+    .navbar a.active {
+        background-color: #E39FF6;
         color: white;
     }
 
-    a {
-        text-decoration: none;
-        color: #000000;
+    .main {
+        padding: 16px;
+        margin-bottom: 30px;
     }
-    a:hover {
-        text-decoration: underline;
-        color: #000000;
+
+    .taxIncome{
+        font-family: Tahoma;
+        text-align: center;
     }
 </style>
 <body>
-    <h1><bold>No content at the moment</bold></h1>
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+    <h1 style="font-family: Bevan; text-align: center;">Income Tax Calculator</h1>
 
     <br>
-     <button class="btn back"><bold><a href="https://3maest.github.io/emaestimada/">Go Back to Menu</a></bold></button>
+    <div class="taxIncome">
+        <h2>Taxable Income</h2>
+        <p>
+            <input id="inputIncome" type="number" placeholder="input income here" oninput="tax()" onchange="tax(this.value)">
+        </p>
+
+        <h2>Income Tax</h2>
+        <p>
+            <span id="incomeTax"></span>
+        </p>
+
+        <script>
+        function tax(){
+        var income = document.getElementById("inputIncome").value*1;
+
+        if (income <= 250000){
+            var output = 0;
+        } else if (income > 250000 && income <= 400000){
+            var output = ((income-250000)*.20)
+        } else if (income > 400000 && income <= 800000){
+            var output = ((income - 400000)*.25 + 30000)
+        } else if (income > 800000 && income <= 2000000){
+            var output = ((income - 800000)*.30 + 130000)
+        } else if (income > 2000000 && income <= 8000000){
+            var output = ((income - 2000000)*.32 + 490000)
+        } else {
+            var output = ((income - 8000000)*.35 + 2410000)
+        }
+        document.getElementById("incomeTax").innerHTML=output;
+        }
+        </script>
+    </div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="conversion.html">Assginment 1</a>
+        <a href="income-tax-calculator.html" class="active">Assignment 2</a>
+        <a href="sum-and-average.html">Assignment 3</a>
+        <a href="simple-payroll.html">Assignment 4</a>
+    </div>
+
 </body>
 </html>
