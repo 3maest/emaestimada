@@ -3,44 +3,52 @@
 <title>Temperature and Units of Length Converter</title>
 <style>
     body {
-        background-image: url('https://img.freepik.com/free-vector/blue-pink-halftone-background_53876-99004.jpg');
+        background-image: url('https://images.hdqwalls.com/download/vector-landscape-reflection-mountains-4k-md-2932x2932.jpg');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: cover;
     }
 
-        .btn {
-        border: none;
-        background-color: inherit;
-        padding: 14px 28px;
-        font-size: 16px;
-        cursor: pointer;
-        display: inline-block;
+    .navbar {
+        overflow: hidden;
+        background-color: #333;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
     }
 
-    .back {
+    .navbar a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        font-family: Tahoma
+    }
+
+    .navbar a:hover {
+        background: #f1f1f1;
         color: black;
-        font-family: Tahoma;
     }
 
-    .back:hover {
-        background: #2196F3;
+    .navbar a.active {
+        background-color: #E39FF6;
         color: white;
     }
 
-    a {
-        text-decoration: none;
-        color: #000000;
-    }
-    a:hover {
-        text-decoration: underline;
-        color: #000000;
+    .main {
+        padding: 16px;
+        margin-bottom: 30px;
     }
 </style>
 <body>
-    <h1 style="font-family: Tahoma; text-align: center;"><bold>Measurement Converters</bold></h1>
+    <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
+    <h1 style="font-family: Bevan; text-align: center;"><bold>Measurement Converters</bold></h1>
 
     <!-- FAHRENHEIT TO CELSIUS -->
+    <br>
     <div style="float:left; width:50%;">
         <h2 style="font-family: Tahoma;"><bold>Fahrenheit to Celsius Converter</bold></h2>
         <p>Type a value in the Fahrenheit field to convert the value to Celsius:</p>
@@ -115,8 +123,12 @@
         </script>
     </div>
 
-    <br>
-    <button class="btn back" style="text-align: center;"><bold><a href="https://emaestimada.w3spaces.com/emaestimada.html">Go Back to Menu</a></bold></button>
-
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="conversion.html" class="active">Assginment 1</a>
+        <a href="income-tax-calculator.html">Assignment 2</a>
+        <a href="sum-and-average.html">Assignment 3</a>
+        <a href="simple-payroll.html">Assignment 4</a>
+    </div>
 </body>
 </html>
