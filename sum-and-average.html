@@ -45,14 +45,92 @@
     }
     </style>
 <body>
-    <h1><bold>No content at the moment</bold></h1>
+    <div class="factorial" style="text-align: center">
+        <h2 style="font-family: Tahoma"><bold>Factorial</bold></h2>
+        <input type="number" id="factornum" placeholder="Enter a number" oninput="factorial()">
+
+        <label for "factNum" id="factLabel">The factorial of n is</label>
+        <input type="number" id="factNum" value="n">
+
+        <script>
+            function factorial(){
+            var n = document.getElementById("factornum").value*1;
+            var f = 1;
+            var i = 1;
+
+            while(i <= n){
+                f*=i;
+                i++;
+            }
+
+            document.getElementById("factLabel").innerHTML="The factorial of " + n + " is";
+            document.getElementById("factNum").value=f;
+        }
+        </script>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="sum" style="text-align: center">
+        <h2 style="font-family: Tahoma"><bold>Summation</bold></h2>
+        <input type="number" id="sumnum" placeholder="Enter a number" oninput="summation()">
+
+        <label for "sumNum" id="sumLabel">The sum of the first n numbers is</label>
+        <input type="number" id="numSum" value="n">
+
+        <script>
+            function summation(){
+            let number = document.getElementById("sumnum").value*1;
+            let sum=0, x=1;
+            
+            do{
+                sum += x;
+                x++
+            }
+            while(x <= number)
+                document.getElementById("numSum").value=sum;
+                document.getElementById("sumLabel").innerHTML= "The sum of the first " + number + " numbers is";
+            }
+        </script>
+    </div>
+
+    <br>
+    <br>
+    
+    <div class="average" style="text-align: center">
+        <h2 style="font-family: Tahoma"><bold>Average</bold></h2>
+        <input type="number" id="avenum" placeholder="Enter a number" oninput="average()">
+
+        <label for "averageNum" id="averageLabel"> The average of the first n numbers is</label>
+        <input type="number" id="numberAve">
+
+        <script>
+            function average(){
+                let number = document.getElementById("avenum").value*1;
+                let sum=0, x=1;
+                let average = 1;
+                
+                do{
+                    sum += x;
+                    x++
+
+                    average = sum/number;
+                }
+                while(x <= number)
+                    document.getElementById("numberAve").value=average;
+                    document.getElementById("averageLabel").innerHTML= "The average of the first " + number + " numbers is";
+                }
+        </script>
+    </div>
 
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="conversion.html">Assginment 1</a>
-        <a href="income-tax-calculator.html">Assignment 2</a>
-        <a href="sum-and-average.html" class="active">Assignment 3</a>
-        <a href="simple-payroll.html">Assignment 4</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/emaestimada.html">Home</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/conversion.html">Assginment 1</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/income-tax-calculator.html">Assignment 2</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/sum-and-average.html" class="active">Assignment 3</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/simple-payroll.html">Assignment 4</a>
     </div>
+
 </body>
 </html>
