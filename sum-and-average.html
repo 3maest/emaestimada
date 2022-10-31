@@ -100,27 +100,29 @@
     
     <div class="average" style="text-align: center">
         <h2 style="font-family: Tahoma"><bold>Average</bold></h2>
-        <input type="number" id="avenum" placeholder="Enter a number" oninput="average()">
+        <input type="number" id="avenum" placeholder="Enter a number" oninput="average(this.value)" onchange="average(this.value)">
 
         <label for "averageNum" id="averageLabel"> The average of the first n numbers is</label>
-        <input type="number" id="numberAve">
+        <span id="numberAve"></span>
 
         <script>
-            function average(){
-                let number = document.getElementById("avenum").value*1;
-                let sum=0, x=1;
-                let average = 1;
-                
-                do{
-                    sum += x;
-                    x++
+            function average(length){
 
-                    average = sum/number;
-                }
-                while(x <= number)
-                    document.getElementById("numberAve").value=average;
-                    document.getElementById("averageLabel").innerHTML= "The average of the first " + number + " numbers is";
-                }
+            length = parseFloat (length);
+            result = 0;
+
+
+            for (let counter=1; counter <=length; counter++){
+
+            result += counter;
+
+            }
+
+            console.log(length)
+
+            document.getElementById("numberAve").innerHTML= result/length; 
+            document.getElementById("averagelabel").innerHTML= 'The average of the first ' +length+' number is: '; 
+            }
         </script>
     </div>
 
