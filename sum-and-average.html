@@ -49,8 +49,10 @@
         <h2 style="font-family: Tahoma"><bold>Factorial</bold></h2>
         <input type="number" id="factornum" placeholder="Enter a number" oninput="factorial()">
 
+        <p>
         <label for "factNum" id="factLabel">The factorial of n is</label>
-        <input type="number" id="factNum" value="n">
+        <input type="number" id="factNum" value="n"><span id="factNum"></span>
+        </p>
 
         <script>
             function factorial(){
@@ -76,8 +78,10 @@
         <h2 style="font-family: Tahoma"><bold>Summation</bold></h2>
         <input type="number" id="sumnum" placeholder="Enter a number" oninput="summation()">
 
+        <p>
         <label for "sumNum" id="sumLabel">The sum of the first n numbers is</label>
         <input type="number" id="numSum" value="n">
+        </p>
 
         <script>
             function summation(){
@@ -102,8 +106,10 @@
         <h2 style="font-family: Tahoma"><bold>Average</bold></h2>
         <input type="number" id="avenum" placeholder="Enter a number" oninput="average(this.value)" onchange="average(this.value)">
 
+        <p>
         <label for "averageNum" id="averageLabel"> The average of the first n numbers is</label>
-        <span id="numberAve"></span>
+        <input type="number" id="numberAve"><span id="numberAve"></span>
+        </p>
 
         <script>
             function average(length){
@@ -120,8 +126,8 @@
 
             console.log(length)
 
-            document.getElementById("numberAve").innerHTML= result/length; 
-            document.getElementById("averagelabel").innerHTML= 'The average of the first ' +length+' number is: '; 
+            document.getElementById("numberAve").value= result/length; 
+            document.getElementById("averageLabel").innerHTML= "The average of the first " + length + " numbers is: "; 
             }
         </script>
     </div>
