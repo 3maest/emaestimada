@@ -53,12 +53,102 @@
     <link href='https://fonts.googleapis.com/css?family=Bevan' rel='stylesheet'>
     <h1 style="font-family: Bevan; text-align: center;"><bold>Simple Payroll</bold></h1>
 
+    <!-- add employee information -->
+    <br>
+    <h2 style="font-family: Tahoma; text-align: center"><bold> Employee Information </bold></h2>
+    <p style="text-align: center">
+        <label for="employee">Employee Name: </label>
+        <input type="text" id="employee"/>
+        <label for="days">Days Worked: </label>
+        <input type="number" id="days"/>
+        <label for="dailyRate">Daily Rate: </label>
+        <input type="number" id="dailyRate"/>
+        <label for="deductAmount">Deduction Amount: </label>
+        <input type="number" id="deductAmount"/>
+        <button onclick="addEmployee()">Add</button>
+    </p>
+
+    <!-- deletion of employee info -->
+    <br>
+    <h2 style="font-family: Tahoma; text-align: center"><bold> Deletion of Employee (No.) Information </bold></h2>
+    <p style="text-align: center">
+        <label for="delEmployee"> Delete Employee No. :</label>
+        <input id="delEmployee" name="delete" type="number">
+        <button onclick="deleteNo()">Delete</button>
+    </p>
+
+    <!-- table of information -->
+    <br>
+    <table id="TableContent">
+        <thead id="header">
+            <tr style="text-align: center">
+                <th>No: </th>
+                <th> Employee Name: </th>
+                <th>Days Worked: </th>
+                <th>Daily Rate: </th>
+                <th>Gross Pay: </th>
+                <th>Deduction Amount: </th>
+                <th>Net Pay: </th>
+            </tr>
+        </thead>
+        <tbody id="content"></tbody>
+    </table>
+    
+    <script>
+        function addEmployee(){
+            var name = document.getElementById("employee").value;
+            var daysWorked = document.getElementById("days").value;
+            var dailyRate = document.getElementById("dailyRate").value;
+            var amountDeducted = document.getElementById("deductAmount").value;
+            let grossPay = daysWorked*dailyRate;
+            let netPay = grossPay - amountDeducted;
+
+            var contentTable = document.getElementById("content");
+            var countRow = contentTable.rows.length;
+            var row = contentTable.insertRow();
+
+            var c1 = row.insertCell(0);
+            var c2 = row.insertCell(1);
+            var c3 = row.insertCell(2);
+            var c4 = row.insertCell(3);
+            var c5 = row.insertCell(4);
+            var c6 = row.insertCell(5);
+            var c7 = row.insertCell(6);
+
+            c1.innerHTML = countRow + 1;
+            c2.innerHTML = name;
+            c3.innerHTML = daysWorked;
+            c4.innerHTML = dailyRate;
+            c5.innerHTML = grossPay;
+            c6.innerHTML = amountDeducted;
+            c7.innerHTML = netPay;
+        }
+
+        function deleteNo(){
+            var toDelete;
+            var employeeNo = document.getElementById("delEmployee").value;
+            var leng = document.getElementById("content").rows.length;
+            document.getElementById("content").deleteRow(employeeNo - 1);
+
+            toDelete = confirm("Delete Employee no. "+ employeeNo +"?");
+
+            var lineNo = employeeNo;
+            if (toDelete) {
+                while (lineNo <= leng){
+                    var x = document.getElementById("content").rows[lineNo - 1].cells;
+                    x[0].innerHTML = lineNo;
+                    lineNo++; 
+                }
+            }
+        }
+    </script>
+
     <div class="navbar">
-        <a href="index.html">Home</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/emaestimada.html">Home</a>
         <a href="https://www.w3spaces-preview.com/emaestimada/conversion.html">Assginment 1</a>
-        <a href="income-tax-calculator.html">Assignment 2</a>
-        <a href="sum-and-average.html">Assignment 3</a>
-        <a href="simple-payroll.html" class="active">Assignment 4</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/income-tax-calculator.html">Assignment 2</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/sum-and-average.html">Assignment 3</a>
+        <a href="https://www.w3spaces-preview.com/emaestimada/simple-payroll.html" class="active">Assignment 4</a>
     </div>
 </body>
 </html>
